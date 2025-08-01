@@ -1,0 +1,27 @@
+# Launch JSON file for Coretex-Debug in STM32 project
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug STM32F105 with OpenOCD",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}/WIFI BLT F105 Debug",
+      "executable": "${workspaceFolder}/WIFI BLT F105 Debug/Interface_WiFi_Bluetooth.elf",
+      "device": "STM32F105RCT6",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f1x.cfg"
+      ],
+      //"svdFile": "${workspaceFolder}/STM32F105.svd",
+      "preLaunchTask": "Build STM32 F105 Debug",
+      "postLaunchCommands": [
+        "monitor reset halt",
+        "load",
+        "break main",
+        "continue"
+      ]
+    }
+  ]
+}
