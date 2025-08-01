@@ -29,7 +29,7 @@ This file is part of VSCode's custom task configuration system and is typically 
 ```
 Execute a task in VS code:
 Ctrl+Shift+P > Run Task
-#My task for STM32 project: makefile + Coretex-Debug
+# My task for STM32 project: makefile + Coretex-Debug
 ```json
 {
   "version": "2.0.0",
