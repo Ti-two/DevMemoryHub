@@ -29,3 +29,47 @@ This file is part of VSCode's custom task configuration system and is typically 
 ```
 Execute a task in VS code:
 Ctrl+Shift+P > Run Task
+#My task for STM32 project: makefile + Coretex-Debug
+```json
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "all"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/WIFI BLT F105 Debug"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "isBackground": false
+    },
+    {
+  "label": "Build STM32 F105 Debug",
+  "type": "shell",
+  "command": "bash",
+  "args": [
+    "-c",
+    "make clean && make all -j4"
+  ],
+  "group": "build",
+  "options": {
+    "cwd": "${workspaceFolder}/WIFI BLT F105 Debug"
+  },
+  "problemMatcher": [
+    "$gcc"
+  ],
+  "isBackground": false
+}
+  ]
+}
+``
